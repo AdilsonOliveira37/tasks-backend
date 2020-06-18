@@ -14,8 +14,8 @@ module.exports = app => {
     }
 
     const save = (req, res) => {
-        if (!req.body.desc.trim() || !req.body.title) {
-            return res.status(400).send('Título e descrição são campos obrigatórios')
+        if (!req.body.desc.trim()) {
+            return res.status(400).send('Descrição é obrigatória')
         }
 
         req.body.userId = req.user.id
